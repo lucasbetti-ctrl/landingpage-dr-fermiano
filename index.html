@@ -1,0 +1,585 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dr. Luiz Renato Fermiano | Dentista em Itatiba</title>
+<meta name="description" content="Consultório odontológico no Centro de Itatiba. Clínico geral, estética e prevenção para toda a família. Agende sua avaliação pelo WhatsApp.">
+<meta name="theme-color" content="#0B6B67">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Figtree:wght@400;500;600;700&family=Allura&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#0E8C86; --teal-d:#0B6B67; --teal-dd:#0A4F4C;
+    --ink:#0F172A; --text:#475569; --muted:#64748B;
+    --line:#E5ECEB; --soft:#F3F8F7; --bg:#FFFFFF;
+    --wa:#22C55E;
+    --r-lg:28px; --r-md:18px;
+    --shadow:0 12px 34px rgba(15,23,42,.07);
+    --shadow-h:0 18px 44px rgba(15,23,42,.12);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Figtree,system-ui,sans-serif;font-size:17px;line-height:1.65;color:var(--text);background:var(--bg);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  svg.i{width:18px;height:18px;flex:none}
+  .wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+  section{padding:100px 0;position:relative}
+  h1,h2,h3{font-family:"Plus Jakarta Sans",Figtree,sans-serif;color:var(--ink);letter-spacing:-.025em;line-height:1.08}
+  h1{font-size:clamp(2.4rem,5.4vw,4rem);font-weight:800}
+  h2{font-size:clamp(2rem,4.2vw,3.2rem);font-weight:700}
+  h3{font-size:1.15rem;font-weight:700;letter-spacing:-.01em;line-height:1.3}
+  .lead{font-size:1.06rem;max-width:620px}
+  .lead strong,p strong{color:var(--ink);font-weight:700}
+  .center{text-align:center}
+  .center .lead{margin-inline:auto}
+
+  /* Eyebrow pill (igual à referência) */
+  .eyebrow{display:inline-flex;align-items:center;gap:7px;background:rgba(255,255,255,.9);border:1px solid rgba(14,140,134,.2);border-radius:999px;padding:6px 13px;font-size:.8rem;font-weight:600;color:var(--teal-dd);margin-bottom:18px;box-shadow:0 2px 8px rgba(15,23,42,.04)}
+  .eyebrow svg{width:14px;height:14px;color:var(--teal)}
+  .title-bar{display:block;width:64px;height:3px;border-radius:3px;background:linear-gradient(90deg,var(--teal),#7FD1C8);margin:18px 0 22px}
+  .center .title-bar{margin-inline:auto}
+  .upper{text-transform:uppercase;letter-spacing:-.01em}
+
+  /* Buttons */
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:15px 24px;border-radius:999px;font-weight:700;font-size:.95rem;transition:transform .2s,box-shadow .2s,background .2s;cursor:pointer;border:0;white-space:nowrap}
+  .btn svg{width:18px;height:18px;flex:none}
+  .btn:hover{transform:translateY(-2px)}
+  .btn-white{background:#fff;color:var(--ink);box-shadow:0 10px 28px rgba(15,23,42,.12)}
+  .btn-white svg{color:var(--wa)}
+  .btn-teal{background:var(--teal-d);color:#fff;box-shadow:0 10px 24px rgba(11,107,103,.28)}
+  .btn-teal:hover{background:var(--teal-dd)}
+  .btn-dark{background:var(--ink);color:#fff;box-shadow:0 10px 24px rgba(15,23,42,.22)}
+
+  /* Photo placeholders */
+  .ph{position:relative;background:linear-gradient(140deg,#E8EFEE,#D7E3E1);display:grid;place-items:center;color:#8AA19E;overflow:hidden}
+  .ph > svg{width:40px;height:40px;opacity:.7}
+  .ph .ph-note{position:absolute;top:12px;left:12px;font-size:.7rem;font-weight:600;color:#6B827F;background:rgba(255,255,255,.75);padding:4px 9px;border-radius:999px}
+  .caption{position:absolute;left:12px;right:12px;bottom:12px;background:rgba(15,23,42,.72);backdrop-filter:blur(6px);color:#fff;font-weight:600;font-size:.9rem;padding:10px 14px;border-radius:10px}
+
+  /* Header */
+  .topline{position:fixed;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--teal-d),#7FD1C8,var(--teal));z-index:60}
+  header{position:fixed;inset:3px 0 auto;z-index:50;background:rgba(255,255,255,.92);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:.25s}
+  header.scrolled{border-color:var(--line);box-shadow:0 6px 20px rgba(15,23,42,.05)}
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px;gap:20px}
+  .logo{display:flex;align-items:center;gap:9px}
+  .logo svg{width:40px;height:40px}
+  .logo-txt{display:flex;flex-direction:column;line-height:1}
+  .logo-txt small{font-size:.58rem;font-weight:700;letter-spacing:.14em;color:var(--muted);text-transform:uppercase}
+  .logo-txt b{font-family:Allura,cursive;font-weight:400;font-size:1.95rem;color:var(--teal);margin:-1px 0 -3px}
+  .logo-txt span{font-size:.5rem;letter-spacing:.22em;color:var(--muted);text-transform:uppercase}
+  .menu{display:flex;gap:26px;font-weight:600;font-size:.92rem;color:var(--ink)}
+  .menu a:hover{color:var(--teal)}
+  .nav .btn{padding:11px 18px;font-size:.88rem}
+  .burger{display:none;background:none;border:0;width:40px;height:40px;cursor:pointer}
+  .burger span{display:block;width:22px;height:2px;background:var(--ink);margin:5px auto;border-radius:2px}
+
+  /* Hero */
+  .hero{padding:150px 0 90px;background:
+      radial-gradient(700px 420px at 12% 30%,rgba(127,209,200,.22),transparent 70%),
+      radial-gradient(600px 400px at 95% 80%,rgba(191,219,254,.35),transparent 70%),
+      linear-gradient(180deg,#F7FBFA,#fff)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+  .hero h1{margin-bottom:22px}
+  .hero .lead{margin-bottom:32px}
+  .hero-ctas{display:flex;flex-direction:column;align-items:flex-start;gap:14px;margin-bottom:44px}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);padding-top:22px;max-width:520px}
+  .stat{padding:0 18px;border-left:1px solid var(--line)}
+  .stat:first-child{padding-left:0;border-left:0}
+  .stat b{display:block;font-family:"Plus Jakarta Sans",sans-serif;color:var(--ink);font-size:1.05rem}
+  .stat span{font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+  .hero-media .ph{aspect-ratio:4/5;border-radius:var(--r-lg);box-shadow:var(--shadow-h);border:6px solid #fff}
+
+  /* Sobre / dor */
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .about p{margin-bottom:14px}
+  .about .closing{color:var(--ink);font-weight:700;margin:22px 0 28px}
+  .rows{display:grid;gap:12px}
+  .row{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .row .ri{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;flex:none}
+  .row .ri svg{width:18px;height:18px}
+  .row b{display:block;color:var(--ink);font-size:.98rem;margin-bottom:2px}
+  .row span{font-size:.92rem}
+
+  /* Serviços */
+  .services{background:linear-gradient(180deg,#F4F9F8,#EEF6F5)}
+  .services::before{content:"";position:absolute;inset:0;background:radial-gradient(500px 360px at 0% 30%,rgba(127,209,200,.35),transparent 70%),radial-gradient(500px 360px at 100% 90%,rgba(191,219,254,.45),transparent 70%);pointer-events:none}
+  .services .wrap{position:relative}
+  .svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+  .svc{background:rgba(255,255,255,.85);border:1px solid rgba(255,255,255,.75);border-radius:var(--r-lg);padding:26px;box-shadow:var(--shadow);transition:transform .25s,box-shadow .25s}
+  .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow-h)}
+  .svc-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:18px}
+  .ico{width:44px;height:44px;border-radius:13px;display:grid;place-items:center}
+  .ico svg{width:22px;height:22px}
+  .tag{font-size:.66rem;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+  .tag.hot{background:#FEF3C7;color:#92400E;padding:5px 10px;border-radius:999px}
+  .svc h3{margin-bottom:8px}
+  .svc p{font-size:.95rem}
+  .svc-cta{margin-top:40px}
+  /* pastéis dos ícones */
+  .c-pink{background:#FCE7F3;color:#DB2777}.c-teal{background:#CCFBF1;color:#0F766E}.c-violet{background:#EDE9FE;color:#7C3AED}
+  .c-amber{background:#FEF3C7;color:#B45309}.c-green{background:#DCFCE7;color:#16A34A}.c-cyan{background:#CFFAFE;color:#0E7490}
+  .c-blue{background:#DBEAFE;color:#2563EB}.c-orange{background:#FFEDD5;color:#EA580C}.c-rose{background:#FFE4E6;color:#E11D48}
+
+  /* Consultório (carrossel) */
+  .grid-bg{background-color:#fff;background-image:linear-gradient(rgba(15,23,42,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(15,23,42,.035) 1px,transparent 1px);background-size:44px 44px}
+  .clinic-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+  .clinic-grid .lead{margin-bottom:28px}
+  .slider{position:relative;border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-h);aspect-ratio:16/10;background:#DDE7E5}
+  .slides{display:flex;height:100%;transition:transform .55s cubic-bezier(.4,.1,.2,1)}
+  .slides .ph{flex:0 0 100%;height:100%}
+  .s-nav{position:absolute;top:14px;right:14px;display:flex;gap:8px;z-index:2}
+  .s-nav button{width:36px;height:36px;border-radius:50%;border:0;background:#fff;color:var(--ink);cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.15);display:grid;place-items:center}
+  .s-nav svg{width:16px;height:16px}
+  .s-progress{position:absolute;left:0;bottom:0;height:3px;background:var(--teal);transition:width .4s}
+
+  /* Diferenciais */
+  .diff{background:var(--soft)}
+  .diff-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .diff-media .ph{aspect-ratio:4/5;border-radius:var(--r-md);box-shadow:var(--shadow-h)}
+  .diff .lead{margin-bottom:26px}
+  .diff .row{padding:14px 16px}
+  .diff .row .ri{width:auto;height:auto;background:none;color:var(--teal)}
+
+  /* Casos */
+  .cases-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:30px}
+  .cases-head .title-bar{margin-bottom:0}
+  .cases-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .case{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:7/8;display:block}
+  .case .ph{position:absolute;inset:0}
+  .case .ph .split{position:absolute;left:0;right:0;top:50%;height:4px;background:#fff;opacity:.7}
+  .case::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(15,23,42,.82))}
+  .case .lbl{position:absolute;left:14px;bottom:14px;right:14px;z-index:1;color:#fff}
+  .case .lbl small{display:block;font-size:.66rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.85}
+  .case .lbl b{font-family:"Plus Jakarta Sans",sans-serif;font-size:1rem}
+  .case:hover .ph{transform:scale(1.04)}
+  .case .ph{transition:transform .5s}
+
+  /* Depoimentos */
+  .testi{background:linear-gradient(180deg,#F1F7F6,#F7FBFA)}
+  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px}
+  .stars{color:#F59E0B;letter-spacing:2px;font-size:.85rem;margin-bottom:12px}
+  .t-card p{font-size:.95rem;margin-bottom:18px;min-height:72px}
+  .who{display:flex;align-items:center;gap:10px}
+  .av{width:34px;height:34px;border-radius:50%;background:#E0F2F1;color:var(--teal-dd);font-size:.75rem;font-weight:700;display:grid;place-items:center}
+  .who b{color:var(--ink);font-size:.92rem}
+  .note{display:inline-block;margin-top:22px;font-size:.8rem;color:#92400E;background:#FFFBEB;border:1px dashed #FCD34D;padding:8px 14px;border-radius:10px}
+
+  /* O dentista */
+  .doc-card{max-width:860px;margin:44px auto 0;background:#fff;border:1px solid var(--line);border-radius:var(--r-md);box-shadow:var(--shadow);display:grid;grid-template-columns:260px 1fr;overflow:hidden;position:relative}
+  .doc-card::before{content:"";position:absolute;inset:0 0 auto;height:4px;background:linear-gradient(90deg,var(--teal-d),#7FD1C8)}
+  .doc-side{background:linear-gradient(180deg,#F1F8F7,#fff);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:36px 20px;text-align:center}
+  .ring{width:170px;height:170px;border-radius:50%;padding:5px;background:linear-gradient(135deg,var(--teal),#7FD1C8,#2563EB)}
+  .ring .ph{width:100%;height:100%;border-radius:50%;border:4px solid #fff}
+  .doc-side .role{margin-top:18px;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teal-d)}
+  .doc-side h3{font-size:1.2rem;margin-top:4px}
+  .doc-side .cro{font-size:.78rem;font-weight:700;color:var(--muted);margin-top:2px}
+  .doc-body{padding:36px 36px 34px}
+  .doc-body p{margin-bottom:12px;font-size:.98rem}
+  .chips{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0 22px}
+  .chips span{background:#EEF7F6;color:var(--teal-dd);font-size:.78rem;font-weight:600;padding:6px 12px;border-radius:999px}
+  .community{display:flex;gap:12px;align-items:flex-start;border-top:1px solid var(--line);padding-top:18px;font-size:.92rem}
+  .community svg{width:20px;height:20px;color:var(--teal);margin-top:3px;flex:none}
+
+  /* Endereço + rodapé */
+  footer{background:var(--teal-dd);color:#BFDCD9;padding:80px 0 26px;position:relative;overflow:hidden}
+  footer::before{content:"";position:absolute;right:-160px;top:-160px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(127,209,200,.18),transparent 70%)}
+  .foot-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:48px;position:relative}
+  footer .logo-txt b{color:#8FE0D6}
+  footer .logo-txt small,footer .logo-txt span{color:#9CC4C0}
+  .foot-about p{margin:16px 0 20px;max-width:360px}
+  .social{display:flex;gap:10px}
+  .social a{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.08);display:grid;place-items:center;color:#fff;transition:.2s}
+  .social a:hover{background:rgba(255,255,255,.18)}
+  .social svg{width:18px;height:18px}
+  footer h2{color:#fff;font-size:1.5rem;margin-bottom:18px}
+  .addr{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:18px 20px;margin-bottom:14px}
+  .addr b{color:#fff;display:block;margin-bottom:2px}
+  .addr a.maps{display:inline-flex;align-items:center;gap:6px;margin-top:8px;font-size:.85rem;font-weight:700;color:#8FE0D6}
+  .addr a.maps svg{width:15px;height:15px}
+  .info-line{display:flex;gap:22px;flex-wrap:wrap;font-size:.92rem;margin-bottom:18px}
+  .info-line span{display:inline-flex;align-items:center;gap:8px}
+  .info-line svg{width:16px;height:16px;color:#8FE0D6}
+  .map{border-radius:14px;overflow:hidden;height:220px}
+  .map iframe{width:100%;height:100%;border:0;display:block;filter:saturate(.85)}
+  .copy{border-top:1px solid rgba(255,255,255,.1);margin-top:50px;padding-top:22px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;font-size:.8rem;position:relative}
+
+  /* WhatsApp flutuante (pílula) */
+  .fab{position:fixed;right:20px;bottom:20px;z-index:70;display:inline-flex;align-items:center;gap:8px;background:var(--wa);color:#fff;font-weight:700;font-size:.92rem;padding:13px 20px;border-radius:999px;box-shadow:0 12px 28px rgba(34,197,94,.4);transition:transform .2s}
+  .fab:hover{transform:translateY(-2px)}
+  .fab svg{width:20px;height:20px}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  /* Responsivo */
+  @media (max-width:1000px){
+    .hero-grid,.about-grid,.clinic-grid,.diff-grid,.foot-grid{grid-template-columns:1fr}
+    .hero-media{max-width:440px}
+    .svc-grid{grid-template-columns:repeat(2,1fr)}
+    .cases-grid{grid-template-columns:repeat(2,1fr)}
+    .t-grid{grid-template-columns:1fr}
+    .diff-media{order:2}
+  }
+  @media (max-width:820px){
+    .menu{position:fixed;top:75px;left:0;right:0;background:#fff;flex-direction:column;gap:16px;padding:22px 16px 28px;border-bottom:1px solid var(--line);transform:translateY(-140%);transition:transform .3s;z-index:-1}
+    .menu.open{transform:none}
+    .burger{display:block}
+    .nav .btn{display:none}
+    .doc-card{grid-template-columns:1fr}
+  }
+  @media (max-width:600px){
+    section{padding:72px 0}
+    .hero{padding:120px 0 64px}
+    .svc-grid{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr;gap:14px}
+    .stat{border-left:0;padding:0}
+    .hero-ctas .btn{width:100%}
+    .doc-body{padding:26px 22px}
+    .fab span{display:none}
+    .fab{padding:14px}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}.reveal{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-wa" viewBox="0 0 24 24"><path fill="currentColor" d="M17.47 14.38c-.3-.15-1.75-.86-2.02-.96-.27-.1-.47-.15-.67.15-.2.3-.77.96-.94 1.16-.17.2-.35.22-.64.07-.3-.15-1.25-.46-2.38-1.47-.88-.79-1.47-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.61-.92-2.2-.24-.58-.49-.5-.67-.5h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.07 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.63.71.22 1.36.19 1.87.12.57-.09 1.75-.72 2-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.45 9.45 0 0 1-4.82-1.32l-.35-.2-3.58.94.96-3.49-.23-.36a9.43 9.43 0 0 1-1.45-5.03c0-5.22 4.25-9.47 9.48-9.47 2.53 0 4.91.99 6.7 2.78a9.4 9.4 0 0 1 2.77 6.7c0 5.22-4.25 9.46-9.47 9.46zm8.06-17.53A11.33 11.33 0 0 0 12.04.63C5.76.63.64 5.74.64 12.03c0 2.01.52 3.97 1.52 5.7L.55 23.63l6.04-1.58a11.37 11.37 0 0 0 5.44 1.39h.01c6.28 0 11.4-5.11 11.4-11.4 0-3.04-1.19-5.9-3.34-8.06z"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/></g></symbol>
+    <symbol id="i-tooth" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M12 5.5c-1.6-1.4-3.7-2-5.5-1.3C4.3 5 3.5 7.5 4.2 10.3c.5 2 1.1 3.4 1.4 5.6.3 2.4.8 4.6 2 4.6 1.6 0 1.5-4.8 4.4-4.8s2.8 4.8 4.4 4.8c1.2 0 1.7-2.2 2-4.6.3-2.2.9-3.6 1.4-5.6.7-2.8-.1-5.3-2.3-6.1-1.8-.7-3.9-.1-5.5 1.3z"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></g></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24"><path fill="currentColor" d="M12 20.5s-8-4.6-8-10.6A4.6 4.6 0 0 1 12 7a4.6 4.6 0 0 1 8 2.9c0 6-8 10.6-8 10.6z"/></symbol>
+    <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></g></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    <symbol id="i-family" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="8" cy="7" r="2.5"/><circle cx="16" cy="7" r="2.5"/><circle cx="12" cy="13" r="2"/><path d="M3.5 20c0-3.5 2-6 4.5-6M20.5 20c0-3.5-2-6-4.5-6M9 20c0-2 1.3-3.5 3-3.5s3 1.5 3 3.5"/></g></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 3s6 6.4 6 11a6 6 0 0 1-12 0c0-4.6 6-11 6-11z"/></symbol>
+    <symbol id="i-mirror" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="15" cy="8" r="4.5"/><path d="M11.8 11.2L3.5 19.5"/></g></symbol>
+    <symbol id="i-crown" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 8l4 4 4-6 4 6 4-4-1.5 10h-13z"/></symbol>
+    <symbol id="i-smile" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M8 14.5s1.5 2 4 2 4-2 4-2"/><path d="M9 9.5h.01M15 9.5h.01" stroke-width="2.6"/></g></symbol>
+    <symbol id="i-xray" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M12 8c-.9-.7-2.1-.9-2.9-.3-1 .7-.9 2-.5 3.2.4 1 .5 3.3 1.3 3.3s.8-2.2 2.1-2.2 1.3 2.2 2.1 2.2c.8 0 .9-2.3 1.3-3.3.4-1.2.5-2.5-.5-3.2-.8-.6-2-.4-2.9.3z"/></g></symbol>
+    <symbol id="i-pliers" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 9.5L20 4M9.5 14.5L4 20"/><path d="M8 4c2 0 4 2 4 4s-2 4-4 4-4-2-4-4"/><path d="M16 20c-2 0-4-2-4-4s2-4 4-4 4 2 4 4"/></g></symbol>
+    <symbol id="i-cam" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="6" width="18" height="13" rx="2.5"/><circle cx="12" cy="12.5" r="3.5"/><path d="M8.5 6l1.5-2h4l1.5 2"/></g></symbol>
+    <symbol id="i-ig" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".7" fill="currentColor"/></g></symbol>
+    <symbol id="i-school" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c0 1.5 2.7 3 6 3s6-1.5 6-3v-5"/></g></symbol>
+    <symbol id="i-star" viewBox="0 0 24 24"><path fill="currentColor" d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9 6.8 19.6l1-5.8-4.3-4.1 5.9-.9z"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></g></symbol>
+    <symbol id="i-left" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M15 5l-7 7 7 7"/></symbol>
+    <symbol id="i-right" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="5" y="5" width="14" height="14" rx="3"/><path d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"/></g></symbol>
+    <symbol id="logo-mark" viewBox="0 0 48 48">
+      <path d="M24 9c-3-2.6-7-3.6-10.4-2.3C9.4 8.3 7.9 13 9.2 18.3c1 3.8 2 6.4 2.6 10.6.6 4.6 1.6 8.8 3.8 8.8 3 0 2.9-9.1 8.4-9.1s5.4 9.1 8.4 9.1c2.2 0 3.2-4.2 3.8-8.8.6-4.2 1.6-6.8 2.6-10.6C40.1 13 38.6 8.3 34.4 6.7 31 5.4 27 6.4 24 9z" fill="none" stroke="#9AA6A4" stroke-width="2.4" stroke-linejoin="round"/>
+      <path d="M5 26c8-9 22-13 38-10-14 0-25 5-32 14z" fill="#0E8C86"/>
+      <path d="M9 31c6-6 16-9 28-8-10 1-18 4-24 10z" fill="#0B6B67" opacity=".75"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="topline"></div>
+<header id="top">
+  <div class="wrap nav">
+    <a href="#inicio" class="logo" aria-label="Dr. Luiz Renato Fermiano – início">
+      <svg><use href="#logo-mark"/></svg>
+      <span class="logo-txt"><small>Dr. Luiz Renato</small><b>Fermiano</b><span>Consultório Odontológico</span></span>
+    </a>
+    <nav class="menu" id="menu">
+      <a href="#sobre">Sobre</a>
+      <a href="#servicos">Serviços</a>
+      <a href="#consultorio">Consultório</a>
+      <a href="#casos">Casos</a>
+      <a href="#dentista">O Dentista</a>
+      <a href="#contato">Endereço</a>
+    </nav>
+    <a class="btn btn-teal" href="#" data-wa><svg><use href="#i-cal"/></svg>Agendar</a>
+    <button class="burger" id="burger" aria-label="Abrir menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="wrap hero-grid">
+      <div class="reveal">
+        <span class="eyebrow"><svg><use href="#i-pin"/></svg>Consultório odontológico no Centro de Itatiba</span>
+        <h1>Sorrisos saudáveis para toda a família</h1>
+        <p class="lead">Clínica geral, estética e prevenção com o <strong>Dr. Luiz Renato Fermiano</strong>. Tratamento com tecnologia, segurança e atendimento humanizado, pertinho de você em <strong>Itatiba</strong>.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-white" href="#" data-wa><svg><use href="#i-wa"/></svg>Falar com o Dr. Fermiano</a>
+          <a class="btn btn-teal" href="#servicos"><svg><use href="#i-tooth"/></svg>Ver tratamentos</a>
+        </div>
+        <div class="stats">
+          <div class="stat"><b>Toda a família</b><span>Adultos e crianças</span></div>
+          <div class="stat"><b>Centro</b><span>Itatiba – SP</span></div>
+          <div class="stat"><b>WhatsApp</b><span>Agenda rápida</span></div>
+        </div>
+      </div>
+      <div class="hero-media reveal">
+        <div class="ph"><span class="ph-note">Foto do Dr. Fermiano no consultório</span><svg><use href="#i-cam"/></svg>
+          <div class="caption">Dr. Luiz Renato Fermiano · Cirurgião-Dentista</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE / DOR -->
+  <section id="sobre">
+    <div class="wrap about-grid">
+      <div class="about reveal">
+        <span class="eyebrow"><svg><use href="#i-smile"/></svg>Autoestima e saúde bucal no mesmo plano</span>
+        <h2>Já evitou sorrir numa foto por causa dos seus dentes?</h2>
+        <span class="title-bar"></span>
+        <p>Muita gente convive com esse desconforto todos os dias. Dentes amarelados, gengiva que sangra, tártaro aparente ou a falta de um dente vão muito além da estética: afetam a confiança, a alimentação e até a forma de conversar.</p>
+        <p>No consultório do <strong>Dr. Fermiano</strong>, cada caso é avaliado com calma, explicado com clareza e tratado com cuidado, do primeiro contato ao pós-tratamento.</p>
+        <p class="closing">Recupere sua confiança. Volte a sorrir sem receio.</p>
+        <a class="btn btn-white" href="#" data-wa><svg><use href="#i-wa"/></svg>Fale conosco pelo WhatsApp</a>
+      </div>
+      <div class="rows reveal">
+        <div class="row"><span class="ri c-rose"><svg><use href="#i-drop"/></svg></span><div><b>Sua gengiva sangra ao escovar?</b><span>Isso não deve ser ignorado. Pode ser sinal de inflamação gengival.</span></div></div>
+        <div class="row"><span class="ri c-amber"><svg><use href="#i-mirror"/></svg></span><div><b>Consegue ver tártaro nos dentes?</b><span>Ele pode estar lá e você nem percebe. A limpeza profissional resolve.</span></div></div>
+        <div class="row"><span class="ri c-pink"><svg><use href="#i-spark"/></svg></span><div><b>Quer um sorriso mais branco?</b><span>Clareamento com segurança e resultado visível desde a primeira sessão.</span></div></div>
+        <div class="row"><span class="ri c-teal"><svg><use href="#i-smile"/></svg></span><div><b>Sente falta de algum dente?</b><span>Prótese total ou PPR para voltar a comer, falar e sorrir com segurança.</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section class="services" id="servicos">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow"><svg><use href="#i-tooth"/></svg>Tudo em um só lugar</span>
+        <h2 class="upper">Conheça os tratamentos</h2>
+        <span class="title-bar"></span>
+        <p class="lead">Clínica geral, estética e prevenção para cuidar do sorriso de toda a família, com atenção a cada detalhe.</p>
+      </div>
+      <div class="svc-grid">
+        <article class="svc reveal">
+          <div class="svc-top"><span class="ico c-pink"><svg><use href="#i-spark"/></svg></span><span class="tag hot">Mais procurado</span></div>
+          <h3>Clareamento Dental</h3>
+          <p>Um sorriso mais branco, com produtos de qualidade e resultado visível desde a primeira sessão.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-top"><span class="ico c-teal"><svg><use href="#i-smile"/></svg></span><span class="tag">Reabilitação</span></div>
+          <h3>Prótese Total e PPR</h3>
+          <p>Mais conforto para comer, melhora na fala e uma solução funcional e personalizada.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-top"><span class="ico c-violet"><svg><use href="#i-tooth"/></svg></span><span class="tag">Estética</span></div>
+          <h3>Restaurações Estéticas</h3>
+          <p>Resinas na cor do dente que devolvem a forma e a função natural do sorriso.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-top"><span class="ico c-amber"><svg><use href="#i-shield"/></svg></span><span class="tag">Prevenção</span></div>
+          <h3>Limpeza e Profilaxia</h3>
+          <p>Remoção de tártaro, polimento e orientação de higiene para evitar problemas futuros.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-top"><span class="ico c-rose"><svg><use href="#i-drop"/></svg></span><span class="tag">Gengiva</span></div>
+          <h3>Tratamento Gengival</h3>
+          <p>Controle do sangramento e da inflamação para proteger seus dentes a longo prazo.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-top"><span class="ico c-green"><svg><use href="#i-family"/></svg></span><span class="tag">Infantil</span></div>
+          <h3>Odontologia para Crianças</h3>
+          <p>Atendimento leve, paciente e acolhedor para criar bons hábitos desde cedo.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-top"><span class="ico c-blue"><svg><use href="#i-crown"/></svg></span><span class="tag">Função e estética</span></div>
+          <h3>Coroas</h3>
+          <p>Recuperação de dentes muito destruídos ou escurecidos, devolvendo cor e mastigação.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-top"><span class="ico c-cyan"><svg><use href="#i-xray"/></svg></span><span class="tag">Diagnóstico</span></div>
+          <h3>Avaliação e Radiografia</h3>
+          <p>Consulta completa para entender seu caso e montar um plano de tratamento claro.</p>
+        </article>
+        <article class="svc reveal">
+          <div class="svc-top"><span class="ico c-orange"><svg><use href="#i-pliers"/></svg></span><span class="tag">Cirurgia</span></div>
+          <h3>Extrações</h3>
+          <p>Procedimento cuidadoso, com orientação e acompanhamento no pós-operatório.</p>
+        </article>
+      </div>
+      <div class="center svc-cta reveal"><a class="btn btn-dark" href="#" data-wa><svg><use href="#i-cal"/></svg>Agendar avaliação</a></div>
+    </div>
+  </section>
+
+  <!-- CONSULTÓRIO -->
+  <section class="grid-bg" id="consultorio">
+    <div class="wrap clinic-grid">
+      <div class="reveal">
+        <span class="eyebrow"><svg><use href="#i-cam"/></svg>O consultório</span>
+        <h2>Cuidado que começa no atendimento</h2>
+        <span class="title-bar"></span>
+        <p class="lead">Um consultório no Centro de Itatiba preparado para receber você com conforto, biossegurança e atenção a cada detalhe.</p>
+        <a class="btn btn-dark" href="#" data-wa><svg><use href="#i-cal"/></svg>Agendar avaliação</a>
+      </div>
+      <div class="slider reveal" id="slider">
+        <div class="slides" id="slides">
+          <div class="ph"><svg><use href="#i-cam"/></svg><div class="caption">Recepção</div></div>
+          <div class="ph"><svg><use href="#i-cam"/></svg><div class="caption">Consultório equipado</div></div>
+          <div class="ph"><svg><use href="#i-cam"/></svg><div class="caption">Dr. Fermiano em atendimento</div></div>
+          <div class="ph"><svg><use href="#i-cam"/></svg><div class="caption">Esterilização e biossegurança</div></div>
+          <div class="ph"><svg><use href="#i-cam"/></svg><div class="caption">Rua Professor Brito, 70 · Centro</div></div>
+        </div>
+        <div class="s-nav"><button id="sPrev" aria-label="Foto anterior"><svg><use href="#i-left"/></svg></button><button id="sNext" aria-label="Próxima foto"><svg><use href="#i-right"/></svg></button></div>
+        <div class="s-progress" id="sProg"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DIFERENCIAIS -->
+  <section class="diff">
+    <div class="wrap diff-grid">
+      <div class="diff-media reveal">
+        <div class="ph"><svg><use href="#i-cam"/></svg><div class="caption">Foto ou vídeo de um procedimento</div></div>
+      </div>
+      <div class="reveal">
+        <span class="eyebrow"><svg><use href="#i-shield"/></svg>Cuidado completo</span>
+        <h2>Atendimento humanizado do primeiro contato ao pós-tratamento</h2>
+        <span class="title-bar"></span>
+        <p class="lead">Acolhimento, respeito e atenção em cada detalhe. Você entende cada etapa do tratamento antes de começar.</p>
+        <div class="rows">
+          <div class="row"><span class="ri"><svg><use href="#i-chip"/></svg></span><div><b>Tecnologia e segurança</b><span>Materiais de qualidade e protocolos rigorosos de biossegurança.</span></div></div>
+          <div class="row"><span class="ri"><svg><use href="#i-shield"/></svg></span><div><b>Prevenção em primeiro lugar</b><span>Cuidados que evitam problemas futuros e mantêm o sorriso saudável.</span></div></div>
+          <div class="row"><span class="ri"><svg><use href="#i-heart"/></svg></span><div><b>Conforto para toda a família</b><span>Explicação simples, escuta atenta e paciência com quem tem receio de dentista.</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CASOS -->
+  <section id="casos">
+    <div class="wrap">
+      <div class="cases-head reveal">
+        <div>
+          <span class="eyebrow"><svg><use href="#i-smile"/></svg>Pacientes felizes, sorrisos transformados</span>
+          <h2>Casos reais</h2>
+          <span class="title-bar"></span>
+        </div>
+        <a class="btn btn-teal" href="https://www.instagram.com/drfermiano/" target="_blank" rel="noopener"><svg><use href="#i-ig"/></svg>Mais casos no Instagram</a>
+      </div>
+      <div class="cases-grid">
+        <a class="case reveal" href="https://www.instagram.com/drfermiano/" target="_blank" rel="noopener"><div class="ph"><span class="ph-note">Antes / depois</span><span class="split"></span></div><div class="lbl"><small>Clareamento</small><b>Sorriso mais branco</b></div></a>
+        <a class="case reveal" href="https://www.instagram.com/drfermiano/" target="_blank" rel="noopener"><div class="ph"><span class="ph-note">Antes / depois</span><span class="split"></span></div><div class="lbl"><small>Prótese total</small><b>Seu sorriso de volta</b></div></a>
+        <a class="case reveal" href="https://www.instagram.com/drfermiano/" target="_blank" rel="noopener"><div class="ph"><span class="ph-note">Antes / depois</span><span class="split"></span></div><div class="lbl"><small>Restauração</small><b>Estética e função</b></div></a>
+        <a class="case reveal" href="https://www.instagram.com/drfermiano/" target="_blank" rel="noopener"><div class="ph"><span class="ph-note">Antes / depois</span><span class="split"></span></div><div class="lbl"><small>Coroa</small><b>Reabilitação</b></div></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEPOIMENTOS -->
+  <section class="testi">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow"><svg><use href="#i-star"/></svg>Avaliações no Google</span>
+        <h2>Quem passa pelo consultório sente a diferença</h2>
+        <span class="title-bar"></span>
+      </div>
+      <div class="t-grid">
+        <div class="t-card reveal"><div class="stars">★★★★★</div><p>[Depoimento real de paciente, retirado das avaliações do Google]</p><div class="who"><span class="av">AB</span><b>Nome do paciente</b></div></div>
+        <div class="t-card reveal"><div class="stars">★★★★★</div><p>[Depoimento real de paciente, retirado das avaliações do Google]</p><div class="who"><span class="av">CD</span><b>Nome do paciente</b></div></div>
+        <div class="t-card reveal"><div class="stars">★★★★★</div><p>[Depoimento real de paciente, retirado das avaliações do Google]</p><div class="who"><span class="av">EF</span><b>Nome do paciente</b></div></div>
+      </div>
+      <div class="center"><span class="note">Espaço reservado: substituir por avaliações reais do Google.</span></div>
+    </div>
+  </section>
+
+  <!-- O DENTISTA -->
+  <section class="grid-bg" id="dentista">
+    <div class="wrap">
+      <div class="center reveal">
+        <span class="eyebrow"><svg><use href="#i-user"/></svg>Quem cuida do seu sorriso</span>
+        <h2>Um dentista de confiança para toda a família</h2>
+        <span class="title-bar"></span>
+      </div>
+      <div class="doc-card reveal">
+        <div class="doc-side">
+          <div class="ring"><div class="ph"><svg><use href="#i-cam"/></svg></div></div>
+          <div class="role">Cirurgião-Dentista</div>
+          <h3>Dr. Luiz Renato Fermiano</h3>
+          <div class="cro">CRO-SP [inserir nº]</div>
+        </div>
+        <div class="doc-body">
+          <p>Clínico geral com atuação em estética e prevenção, o Dr. Fermiano atende no Centro de Itatiba com uma proposta simples: cuidar do sorriso de toda a família com técnica, honestidade e proximidade.</p>
+          <p>Cada paciente é ouvido com atenção, recebe explicações claras sobre o próprio caso e um plano de tratamento pensado para a sua realidade.</p>
+          <div class="chips"><span>Clínica geral</span><span>Clareamento</span><span>Restaurações</span><span>Prótese total e PPR</span><span>Prevenção</span><span>Odontopediatria</span></div>
+          <div class="community"><svg><use href="#i-school"/></svg><span>Também atua em saúde bucal coletiva, com ações em escolas e no Odontomóvel, que já foram destaque na imprensa local.</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ENDEREÇO / RODAPÉ -->
+<footer id="contato">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-about">
+        <a href="#inicio" class="logo"><svg><use href="#logo-mark"/></svg><span class="logo-txt"><small>Dr. Luiz Renato</small><b>Fermiano</b><span>Consultório Odontológico</span></span></a>
+        <p>Sorrisos saudáveis para toda a família, com tecnologia, conforto e atendimento humanizado em Itatiba.</p>
+        <div class="social">
+          <a href="https://www.instagram.com/drfermiano/" target="_blank" rel="noopener" aria-label="Instagram"><svg><use href="#i-ig"/></svg></a>
+          <a href="#" data-wa aria-label="WhatsApp"><svg><use href="#i-wa"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h2>Endereço</h2>
+        <div class="addr">
+          <b>Consultório Dr. Fermiano</b>
+          Rua Professor Brito, 70 · Sala 03 · Centro, Itatiba – SP
+          <br><a class="maps" href="https://www.google.com/maps/search/?api=1&query=Rua%20Professor%20Brito%2C%2070%2C%20Centro%2C%20Itatiba%20-%20SP" target="_blank" rel="noopener"><svg><use href="#i-pin"/></svg>Ver no Maps</a>
+        </div>
+        <div class="info-line">
+          <span><svg><use href="#i-phone"/></svg>(11) 96851-7655</span>
+          <span><svg><use href="#i-clock"/></svg>[Inserir horário de atendimento]</span>
+        </div>
+        <div class="map"><iframe title="Mapa do consultório" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://maps.google.com/maps?q=Rua%20Professor%20Brito%2C%2070%2C%20Centro%2C%20Itatiba%20-%20SP&z=16&output=embed"></iframe></div>
+      </div>
+    </div>
+    <div class="copy">
+      <span>© <span id="yr"></span> Dr. Luiz Renato Fermiano. Todos os direitos reservados.</span>
+      <span>Responsável técnico: Dr. Luiz Renato Fermiano · CRO-SP [nº] · WhatsApp (11) 96851-7655</span>
+    </div>
+  </div>
+</footer>
+
+<a class="fab" href="#" data-wa aria-label="Fale conosco pelo WhatsApp"><svg><use href="#i-wa"/></svg><span>Fale conosco</span></a>
+
+<script>
+  const WA = "5511968517655";
+  const MSG = "Olá, Dr. Fermiano! Gostaria de agendar uma avaliação.";
+  document.querySelectorAll("[data-wa]").forEach(a => {
+    a.href = `https://wa.me/${WA}?text=${encodeURIComponent(a.dataset.msg || MSG)}`;
+    a.target = "_blank"; a.rel = "noopener";
+  });
+
+  const header = document.getElementById("top");
+  const onScroll = () => header.classList.toggle("scrolled", scrollY > 10);
+  onScroll(); addEventListener("scroll", onScroll, {passive:true});
+
+  const menu = document.getElementById("menu");
+  document.getElementById("burger").onclick = () => menu.classList.toggle("open");
+  menu.querySelectorAll("a").forEach(a => a.onclick = () => menu.classList.remove("open"));
+
+  // Carrossel do consultório
+  const slides = document.getElementById("slides"), total = slides.children.length, prog = document.getElementById("sProg");
+  let idx = 0, timer;
+  const go = n => { idx = (n + total) % total; slides.style.transform = `translateX(-${idx*100}%)`; prog.style.width = `${(idx+1)/total*100}%`; };
+  const auto = () => { clearInterval(timer); timer = setInterval(() => go(idx+1), 4500); };
+  document.getElementById("sPrev").onclick = () => { go(idx-1); auto(); };
+  document.getElementById("sNext").onclick = () => { go(idx+1); auto(); };
+  go(0); auto();
+
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), {threshold:.12});
+  document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
